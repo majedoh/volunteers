@@ -1,0 +1,76 @@
+/* src/styles/opportunities.module.css */
+.opportunitiesSection {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    background-color: var(--color-secondary);
+    min-height: 100vh;
+}
+
+.pageTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.pageDescription {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-neutral-text-light);
+    margin-bottom: 2rem;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: 300px 1fr;
+    }
+}
+
+.filtersColumn {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+}
+
+.opportunitiesColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .cardsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .cardsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.resultsSummary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--color-neutral-text-light);
+    font-size: 0.875rem;
+}
+
+.paginationContainer {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
