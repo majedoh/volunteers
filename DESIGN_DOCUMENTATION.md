@@ -1,6 +1,7 @@
-xw# Volunteers Platform - Design Documentation & Developer Handoff Guide
+# Volunteers Platform - Design Documentation & Developer Handoff Guide
 
 ## Project Overview
+Core Goal Alignment: Both your request and the document aim to create a centralized platform for managing volunteer opportunities and interactions for the Presidency of Religious Affairs at the Grand Mosque and the Prophet's Mosque. The goal is to streamline processes, improve communication, and enhance the volunteer experience.
 
 This document serves as a comprehensive guide for designers and engineers working on the Volunteers platform. The project is a Next.js-based volunteer platform that supports bilingual content (Arabic and English) with full RTL/LTR support, following a component-based architecture with a clear separation of layout, UI components, and content sections.
 
