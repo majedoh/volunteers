@@ -3,13 +3,19 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 import { useLanguage } from '@/context/language-context';
-import { Menu, X, User } from 'lucide-react';
+import { useAuth } from '@/context/auth-context';
+import { Menu, X, User, LayoutDashboard } from 'lucide-react';
 import Link from 'next/link';
+import GoogleSignInButton from '@/components/auth/GoogleSignInButton';
+import SignOutButton from '@/components/auth/SignOutButton';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Header: React.FC = () => {
   const { t, dir } = useLanguage();
+  const { user, status, isAdmin } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   
   // Handle scroll event to change header appearance
   useEffect(() => {
@@ -39,11 +45,25 @@ const Header: React.FC = () => {
     };
   }, []);
   
+  // Close user menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isUserMenuOpen) {
+        setIsUserMenuOpen(false);
+      }
+    };
+    
+    document.addEventListener('click', handleClickOutside, { capture: true });
+    return () => {
+      document.removeEventListener('click', handleClickOutside, { capture: true });
+    };
+  }, [isUserMenuOpen]);
+  
   // Navigation links
   const navLinks = [
     { name: t('home'), path: '/' },
     { name: t('about'), path: '/#about' },
-    { name: t('opportunities'), path: '/#opportunities' },
+    { name: t('opportunities'), path: '/opportunities' },
     { name: t('contact'), path: '/#contact' },
   ];
   
@@ -88,6 +108,19 @@ const Header: React.FC = () => {
                 </Link>
               </li>
             ))}
+            {isAdmin && (
+              <li>
+                <Link
+                  href="/admin/dashboard"
+                  className={`font-medium transition-colors flex items-center ${
+                    isScrolled ? 'text-neutral-800 hover:text-primary' : 'text-white hover:text-white/80'
+                  }`}
+                >
+                  <LayoutDashboard className="h-4 w-4 mr-2 ml-2" />
+                  {t('adminDashboard')}
+                </Link>
+              </li>
+            )}
           </ul>
           
           <div className="flex items-center gap-3">
@@ -97,13 +130,53 @@ const Header: React.FC = () => {
               className={isScrolled ? '' : 'border-white text-white hover:bg-white/20'}
             />
             
-            <Button
-              variant={isScrolled ? 'default' : 'outline'}
-              className={!isScrolled ? 'border-white text-white hover:bg-white/20' : ''}
-            >
-              <User className="h-4 w-4 mr-2" />
-              {t('login')}
-            </Button>
+            {status === 'authenticated' ? (
+              <div className="relative">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsUserMenuOpen(!isUserMenuOpen);
+                  }}
+                  className="flex items-center gap-2 focus:outline-none"
+                >
+                  <Avatar className="h-8 w-8 border border-white/20">
+                    <AvatarImage src={user?.image || ''} alt={user?.name || ''} />
+                    <AvatarFallback className={isScrolled ? 'bg-primary text-white' : 'bg-white text-primary'}>
+                      {user?.name?.charAt(0) || 'U'}
+                    </AvatarFallback>
+                  </Avatar>
+                </button>
+                
+                {isUserMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg overflow-hidden z-20">
+                    <div className="p-3 border-b border-gray-200">
+                      <p className="text-sm font-medium text-gray-900">{user?.name}</p>
+                      <p className="text-xs text-gray-500 truncate">{user?.email}</p>
+                    </div>
+                    <div className="p-2">
+                      {isAdmin && (
+                        <Link
+                          href="/admin/dashboard"
+                          className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
+                          onClick={() => setIsUserMenuOpen(false)}
+                        >
+                          <LayoutDashboard className="h-4 w-4 mr-2" />
+                          {t('adminDashboard')}
+                        </Link>
+                      )}
+                      <div className="p-2">
+                        <SignOutButton variant="ghost" className="w-full justify-start" />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <GoogleSignInButton
+                variant={isScrolled ? 'default' : 'outline'}
+                className={!isScrolled ? 'border-white text-white hover:bg-white/20' : ''}
+              />
+            )}
           </div>
         </nav>
         
@@ -145,15 +218,41 @@ const Header: React.FC = () => {
                     </Link>
                   </li>
                 ))}
+                {isAdmin && (
+                  <li>
+                    <Link
+                      href="/admin/dashboard"
+                      className="block font-medium text-neutral-800 hover:text-primary py-2 flex items-center"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <LayoutDashboard className="h-4 w-4 mr-2 ml-2" />
+                      {t('adminDashboard')}
+                    </Link>
+                  </li>
+                )}
                 <li>
-                  <Button
-                    variant="default"
-                    className="w-full mt-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <User className="h-4 w-4 mr-2" />
-                    {t('login')}
-                  </Button>
+                  {status === 'authenticated' ? (
+                    <div className="border-t pt-4 mt-2">
+                      <div className="flex items-center gap-3 mb-3">
+                        <Avatar className="h-8 w-8">
+                          <AvatarImage src={user?.image || ''} alt={user?.name || ''} />
+                          <AvatarFallback className="bg-primary text-white">
+                            {user?.name?.charAt(0) || 'U'}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="text-sm font-medium">{user?.name}</p>
+                          <p className="text-xs text-gray-500">{user?.email}</p>
+                        </div>
+                      </div>
+                      <SignOutButton variant="outline" className="w-full" />
+                    </div>
+                  ) : (
+                    <GoogleSignInButton
+                      className="w-full mt-2"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    />
+                  )}
                 </li>
               </ul>
             </nav>

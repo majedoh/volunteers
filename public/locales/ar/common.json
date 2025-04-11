@@ -78,5 +78,125 @@
   "opportunityClosed": "الفرصة مغلقة",
   "opportunityFilled": "الفرصة ممتلئة",
   "errorLoadingOpportunity": "خطأ في تحميل تفاصيل الفرصة",
-  "browseOtherOpportunities": "تصفح الفرص الأخرى"
+  "browseOtherOpportunities": "تصفح الفرص الأخرى",
+
+
+
+
+  "signInWithGoogle": "تسجيل الدخول عبر جوجل",
+  "signingIn": "جاري تسجيل الدخول...",
+  "signOut": "تسجيل الخروج",
+  
+
+  "adminPortal": "لوحة الإدارة",
+  "adminDashboard": "لوحة تحكم المشرف",
+  "dashboard": "لوحة التحكم",
+  "volunteers": "المتطوعين",
+  "settings": "الإعدادات",
+  "welcomeAdmin": "مرحبًا",
+  "adminDashboardDesc": "إليك نظرة عامة على الوضع الحالي للمنصة والأنشطة الأخيرة.",
+  
+
+  "totalVolunteers": "إجمالي المتطوعين",
+  "activeVolunteers": "المتطوعين النشطين",
+  "totalOpportunities": "إجمالي الفرص",
+  "activeOpportunities": "نشطة حاليًا",
+  "completedOpportunities": "مكتملة",
+  "pastMonth": "من الشهر الماضي",
+  "volunteerHours": "ساعات التطوع",
+  "totalHours": "إجمالي الساعات المساهمة",
+  
+
+  "recentOpportunities": "الفرص الحديثة",
+  "recentVolunteers": "المتطوعين الجدد",
+  "notifications": "الإشعارات",
+  "recentNotifications": "الإشعارات الحديثة",
+  
+
+  "title": "العنوان",
+  "applicants": "المتقدمين",
+  "date": "التاريخ",
+  "name": "الاسم",
+  "role": "الدور",
+  "joinedDate": "تاريخ الانضمام",
+  
+
+  "newApplications": "طلبات جديدة",
+  "newApplicationsDesc": "طلب تطوع جديد تم استلامه",
+  "opportunityCompleted": "اكتملت الفرصة",
+  "opportunityCompletedDesc": "تم الانتهاء من فرصة 'خدمات الترجمة' بنجاح",
+  "newFeedback": "تعليقات جديدة",
+  "newFeedbackDesc": "قدم المتطوعون ملاحظات جديدة لفرصة 'إرشاد الزائرين'",
+  "hourAgo": "ساعة مضت",
+  "hoursAgo": "ساعات مضت",
+  "dayAgo": "يوم مضى",
+  
+
+  "unauthorized": "وصول غير مصرح به",
+  "pleaseSignInAdmin": "يرجى تسجيل الدخول بحساب مشرف للوصول إلى منطقة الإدارة.",
+  "notAdminAccount": "حسابك لا يملك صلاحيات المشرف.",
+  "contactAdminSupport": "إذا كنت تعتقد أن هذا خطأ، يرجى الاتصال بالدعم.",
+  "backToHome": "العودة إلى الرئيسية",
+  "goToDashboard": "الذهاب إلى لوحة التحكم",
+  
+
+  "openMenu": "فتح القائمة",
+  "closeMenu": "إغلاق القائمة",
+
+
+   
+  "management": "الإدارة",
+  "reporting": "التقارير",
+  "system": "النظام",
+  "reports": "التقارير",
+  "feedback": "التعليقات",
+  "help": "المساعدة",
+  "applications": "الطلبات",
+  
+  "loadingDashboard": "جاري تحميل بيانات لوحة التحكم...",
+  "errorLoadingDashboard": "خطأ في تحميل لوحة التحكم",
+  "pendingVolunteers": "المتطوعون قيد الانتظار",
+  "approvedVolunteers": "المتطوعون المعتمدون",
+  "pendingOpportunities": "الفرص قيد الانتظار",
+  "totalCompletedOpportunities": "إجمالي الفرص المكتملة",
+  "totalHoursContributed": "إجمالي الساعات المساهمة",
+  
+  "quickActions": "إجراءات سريعة",
+  "addVolunteer": "إضافة متطوع",
+  "createOpportunity": "إنشاء فرصة",
+  "scheduleEvent": "جدولة حدث",
+  "sendAnnouncement": "إرسال إعلان",
+  "shareOpportunity": "مشاركة فرصة",
+  "exportReport": "تصدير تقرير",
+  
+
+  "recentApplications": "الطلبات الحديثة",
+  "noRecentApplications": "لم يتم العثور على طلبات حديثة",
+  "minutesAgo": "دقائق مضت",
+  "daysAgo": "أيام مضت",
+  "approve": "قبول",
+  "reject": "رفض",
+  "viewAllApplications": "عرض جميع الطلبات",
+  "managePendingVolunteers": "إدارة المتطوعين قيد الانتظار",
+  "viewAllVolunteers": "عرض جميع المتطوعين",
+  "manageOpportunities": "إدارة الفرص",
+  "viewActiveOpportunities": "عرض الفرص النشطة",
+  "viewCompletedOpportunities": "عرض الفرص المكتملة",
+  "viewHoursReport": "عرض تقرير الساعات",
+  
+
+  "upcomingEvents": "الأحداث القادمة",
+  "ramadanPreparation": "متطوعو تجهيز رمضان",
+  "ramadanPreparationDate": "١٥-٢٥ أبريل ٢٠٢٥",
+  "ramadanPreparationDesc": "تجهيز المسجد الحرام للشهر الكريم رمضان.",
+  "upcoming": "قادم",
+  "volunteerTraining": "تدريب المتطوعين الجدد",
+  "volunteerTrainingDate": "١ مايو ٢٠٢٥",
+  "volunteerTrainingDesc": "جلسة تدريبية للمتطوعين المسجلين حديثًا.",
+  "registration": "التسجيل مفتوح",
+  "viewAllEvents": "عرض جميع الأحداث",
+  
+
+
+  "adminUser": "مستخدم إداري"
 }

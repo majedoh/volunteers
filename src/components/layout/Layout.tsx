@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { useLanguage } from '@/context/language-context';
+import DevAuthToggle from '@/components/dev/DevAuthToggle';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -30,6 +31,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
       
       <Footer />
+      
+      {/* Development-only auth toggle */}
+      {process.env.NODE_ENV !== 'production' && <DevAuthToggle />}
     </div>
   );
 };

@@ -79,6 +79,124 @@
   "opportunityClosed": "Opportunity Closed",
   "opportunityFilled": "Opportunity Filled",
   "errorLoadingOpportunity": "Error Loading Opportunity",
-  "browseOtherOpportunities": "Browse Other Opportunities"
+  "browseOtherOpportunities": "Browse Other Opportunities",
 
+
+
+
+  "signInWithGoogle": "Sign in with Google",
+  "signingIn": "Signing in...",
+  "signOut": "Sign out",
+  
+
+  "adminPortal": "Admin Portal",
+  "adminDashboard": "Admin Dashboard",
+  "dashboard": "Dashboard",
+  "volunteers": "Volunteers",
+  "settings": "Settings",
+  "welcomeAdmin": "Welcome",
+  "adminDashboardDesc": "Here's an overview of the platform's current status and recent activities.",
+  
+
+  "totalVolunteers": "Total Volunteers",
+  "activeVolunteers": "Active volunteers",
+  "totalOpportunities": "Total Opportunities",
+  "activeOpportunities": "Currently active",
+  "completedOpportunities": "Completed",
+  "pastMonth": "From the past month",
+  "volunteerHours": "Volunteer Hours",
+  "totalHours": "Total hours contributed",
+  
+
+  "recentOpportunities": "Recent Opportunities",
+  "recentVolunteers": "Recent Volunteers",
+  "notifications": "Notifications",
+  "recentNotifications": "Recent Notifications",
+  
+
+  "title": "Title",
+  "applicants": "Applicants",
+  "date": "Date",
+  "name": "Name",
+  "role": "Role",
+  "joinedDate": "Joined Date",
+  
+
+  "newApplications": "New Applications",
+  "newApplicationsDesc": "new volunteer applications received",
+  "opportunityCompleted": "Opportunity Completed",
+  "opportunityCompletedDesc": "The 'Translation Services' opportunity has been completed successfully",
+  "newFeedback": "New Feedback",
+  "newFeedbackDesc": "Volunteers have submitted new feedback for the 'Visitor Guidance' opportunity",
+  "hourAgo": "hour ago",
+  "hoursAgo": "hours ago",
+  "dayAgo": "day ago",
+  
+
+  "unauthorized": "Unauthorized Access",
+  "pleaseSignInAdmin": "Please sign in with an admin account to access the admin area.",
+  "notAdminAccount": "Your account does not have admin privileges.",
+  "contactAdminSupport": "If you believe this is an error, please contact support.",
+  "backToHome": "Back to Home",
+  "goToDashboard": "Go to Dashboard",
+  
+  "openMenu": "Open Menu",
+  "closeMenu": "Close Menu",
+
+  "management": "Management",
+  "reporting": "Reporting",
+  "system": "System",
+  "reports": "Reports",
+  "feedback": "Feedback",
+  "help": "Help",
+  "applications": "Applications",
+  
+
+  "loadingDashboard": "Loading dashboard data...",
+  "errorLoadingDashboard": "Error Loading Dashboard",
+  "pendingVolunteers": "Pending Volunteers",
+  "approvedVolunteers": "Approved volunteers",
+  "pendingOpportunities": "Pending Opportunities",
+  "totalCompletedOpportunities": "Total completed opportunities",
+  "totalHoursContributed": "Total hours contributed",
+  
+
+  "quickActions": "Quick Actions",
+  "addVolunteer": "Add Volunteer",
+  "createOpportunity": "Create Opportunity",
+  "scheduleEvent": "Schedule Event",
+  "sendAnnouncement": "Send Announcement",
+  "shareOpportunity": "Share Opportunity",
+  "exportReport": "Export Report",
+  
+
+  "recentApplications": "Recent Applications",
+  "noRecentApplications": "No recent applications found",
+  "minutesAgo": "minutes ago",
+  "daysAgo": "days ago",
+  "approve": "Approve",
+  "reject": "Reject",
+  "viewAllApplications": "View All Applications",
+  "managePendingVolunteers": "Manage Pending Volunteers",
+  "viewAllVolunteers": "View All Volunteers",
+  "manageOpportunities": "Manage Opportunities",
+  "viewActiveOpportunities": "View Active Opportunities",
+  "viewCompletedOpportunities": "View Completed Opportunities",
+  "viewHoursReport": "View Hours Report",
+  
+
+  "upcomingEvents": "Upcoming Events",
+  "ramadanPreparation": "Ramadan Preparation Volunteers",
+  "ramadanPreparationDate": "April 15-25, 2025",
+  "ramadanPreparationDesc": "Preparing the Grand Mosque for the holy month of Ramadan.",
+  "upcoming": "Upcoming",
+  "volunteerTraining": "New Volunteer Training",
+  "volunteerTrainingDate": "May 1, 2025",
+  "volunteerTrainingDesc": "Training session for newly registered volunteers.",
+  "registration": "Registration Open",
+  "viewAllEvents": "View All Events",
+  
+
+
+  "adminUser": "Admin User"
 }
