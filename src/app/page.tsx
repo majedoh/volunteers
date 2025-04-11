@@ -1,16 +1,7 @@
-// src/app/page.tsx
-import { HeroSection } from "@/components/sections/HeroSection";
-import { FeaturedOpportunities } from "@/components/sections/FeaturedOpportunities";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { CallToAction } from "@/components/sections/CallToAction";
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
-      <HeroSection />
-      <FeaturedOpportunities />
-      <AboutSection />
-      <CallToAction />
-    </>
+    <main>
+      <div>Hello world!</div>
+    </main>
   );
-};
+}
