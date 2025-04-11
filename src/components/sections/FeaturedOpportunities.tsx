@@ -1,9 +1,10 @@
 // src/components/sections/FeaturedOpportunities.tsx
 import React from 'react';
 import { useLanguage } from '@/context/language-context';
-import OpportunityCard from '@/components/ui/OpportunityCard';
+import OpportunityCard from '@/components/ui/opportunity/OpportunityCard';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
 const FeaturedOpportunities: React.FC = () => {
   const { t, dir } = useLanguage();
@@ -18,9 +19,10 @@ const FeaturedOpportunities: React.FC = () => {
       description: t('opportunity1Description'),
       image: '/images/opportunity1.jpg',
       location: 'Makkah',
-      date: '2023-05-15',
+      date: '2025-05-15',
       spots: 25,
       featured: true,
+      category: 'Translation',
     },
     {
       id: '2',
@@ -28,9 +30,10 @@ const FeaturedOpportunities: React.FC = () => {
       description: t('opportunity2Description'),
       image: '/images/opportunity2.jpg',
       location: 'Madinah',
-      date: '2023-06-10',
+      date: '2025-06-10',
       spots: 15,
       featured: false,
+      category: 'Guidance',
     },
     {
       id: '3',
@@ -38,9 +41,10 @@ const FeaturedOpportunities: React.FC = () => {
       description: t('opportunity3Description'),
       image: '/images/opportunity3.jpg',
       location: 'Makkah',
-      date: '2023-05-20',
+      date: '2025-05-20',
       spots: 30,
       featured: true,
+      category: 'Assistance',
     }
   ];
   
@@ -68,18 +72,21 @@ const FeaturedOpportunities: React.FC = () => {
               date={opportunity.date}
               spots={opportunity.spots}
               featured={opportunity.featured}
+              category={opportunity.category}
             />
           ))}
         </div>
         
         <div className="mt-12 text-center">
-          <Button 
-            variant="outline" 
-            className="group"
-          >
-            <span>{t('viewAllOpportunities')}</span>
-            <ArrowIcon className="h-4 w-4 ml-1 mr-1 transition-transform duration-300 group-hover:translate-x-1" />
-          </Button>
+          <Link href="/opportunities">
+            <Button 
+              variant="outline" 
+              className="group"
+            >
+              <span>{t('viewAllOpportunities')}</span>
+              <ArrowIcon className="h-4 w-4 ml-1 mr-1 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

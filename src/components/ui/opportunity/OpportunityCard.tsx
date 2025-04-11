@@ -50,63 +50,63 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({
   };
   
   return (
-    <Card className={`overflow-hidden transition-all duration-300 hover:shadow-lg border h-full ${
-      featured ? 'border-accent shadow-md' : 'border-neutral-200'
-    } ${className}`}>
-      {/* Opportunity Image */}
-      <div className="relative aspect-video overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-        />
-        {featured && (
-          <div className="absolute top-4 right-4 bg-accent text-white px-3 py-1 text-sm font-medium rounded-full">
-            {t('featured')}
-          </div>
-        )}
-        {category && (
-          <Badge variant="secondary" className="absolute bottom-4 left-4">
-            <Tag className="h-3 w-3 mr-1" />
-            {category}
-          </Badge>
-        )}
-      </div>
-      
-      <CardHeader className="pb-2">
-        <CardTitle className="text-xl font-bold text-primary-dark">{title}</CardTitle>
-        {(location || date || spots !== undefined) && (
-          <div className="flex flex-wrap gap-3 mt-2">
-            {location && (
-              <div className="flex items-center gap-1 text-neutral-500 text-sm">
-                <MapPin className="h-4 w-4 text-primary-light" />
-                <span>{location}</span>
-              </div>
-            )}
-            {date && (
-              <div className="flex items-center gap-1 text-neutral-500 text-sm">
-                <Calendar className="h-4 w-4 text-primary-light" />
-                <span>{formatDate(date)}</span>
-              </div>
-            )}
-            {spots !== undefined && (
-              <div className="flex items-center gap-1 text-neutral-500 text-sm">
-                <Users className="h-4 w-4 text-primary-light" />
-                <span>{spots} {t('spots')}</span>
-              </div>
-            )}
-          </div>
-        )}
-      </CardHeader>
-      
-      <CardContent className="flex-grow">
-        <CardDescription className="line-clamp-3 text-neutral-600">
-          {description}
-        </CardDescription>
-      </CardContent>
-      
-      <CardFooter className="pt-0">
-        <Link href={`/opportunities/${id}`} className="w-full">
+    <Link href={`/opportunities/${id}`} className="block h-full">
+      <Card className={`overflow-hidden transition-all duration-300 hover:shadow-lg border h-full cursor-pointer ${
+        featured ? 'border-accent shadow-md' : 'border-neutral-200'
+      } ${className}`}>
+        {/* Opportunity Image */}
+        <div className="relative aspect-video overflow-hidden">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          {featured && (
+            <div className="absolute top-4 right-4 bg-accent text-white px-3 py-1 text-sm font-medium rounded-full">
+              {t('featured')}
+            </div>
+          )}
+          {category && (
+            <Badge variant="secondary" className="absolute bottom-4 left-4">
+              <Tag className="h-3 w-3 mr-1" />
+              {category}
+            </Badge>
+          )}
+        </div>
+        
+        <CardHeader className="pb-2">
+          <CardTitle className="text-xl font-bold text-primary-dark">{title}</CardTitle>
+          {(location || date || spots !== undefined) && (
+            <div className="flex flex-wrap gap-3 mt-2">
+              {location && (
+                <div className="flex items-center gap-1 text-neutral-500 text-sm">
+                  <MapPin className="h-4 w-4 text-primary-light" />
+                  <span>{location}</span>
+                </div>
+              )}
+              {date && (
+                <div className="flex items-center gap-1 text-neutral-500 text-sm">
+                  <Calendar className="h-4 w-4 text-primary-light" />
+                  <span>{formatDate(date)}</span>
+                </div>
+              )}
+              {spots !== undefined && (
+                <div className="flex items-center gap-1 text-neutral-500 text-sm">
+                  <Users className="h-4 w-4 text-primary-light" />
+                  <span>{spots} {t('spots')}</span>
+                </div>
+              )}
+            </div>
+          )}
+        </CardHeader>
+        
+        <CardContent className="flex-grow">
+          <CardDescription className="line-clamp-3 text-neutral-600">
+            {description}
+          </CardDescription>
+        </CardContent>
+        
+        <CardFooter className="pt-0">
           <Button 
             variant="default" 
             className="w-full mt-2 group"
@@ -114,9 +114,9 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({
             <span>{t('viewDetails')}</span>
             <ArrowIcon className="h-4 w-4 ml-1 mr-1 transition-transform duration-300 group-hover:translate-x-1" />
           </Button>
-        </Link>
-      </CardFooter>
-    </Card>
+        </CardFooter>
+      </Card>
+    </Link>
   );
 };
 

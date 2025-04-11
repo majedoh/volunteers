@@ -61,5 +61,22 @@
   
   "locationMakkah": "مكة المكرمة",
   "locationMadinah": "المدينة المنورة",
-  "locationJeddah": "جدة"
+  "locationJeddah": "جدة",
+    "opportunityDetails": "تفاصيل الفرصة التطوعية",
+  "backToOpportunities": "العودة إلى الفرص",
+  "opportunityDescription": "وصف الفرصة",
+  "requirements": "المتطلبات",
+  "skillsDeveloped": "المهارات المكتسبة",
+  "timeCommitment": "الالتزام الزمني",
+  "applicationDeadline": "الموعد النهائي للتقديم",
+  "applyNow": "قدم الآن",
+  "applying": "جاري التقديم...",
+  "applied": "تم التقديم بنجاح",
+  "share": "مشاركة",
+  "signInToApply": "سجل الدخول للتقديم",
+  "loginRequiredTooltip": "يجب تسجيل الدخول للتقديم لهذه الفرصة",
+  "opportunityClosed": "الفرصة مغلقة",
+  "opportunityFilled": "الفرصة ممتلئة",
+  "errorLoadingOpportunity": "خطأ في تحميل تفاصيل الفرصة",
+  "browseOtherOpportunities": "تصفح الفرص الأخرى"
 }

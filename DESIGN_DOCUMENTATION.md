@@ -28,15 +28,43 @@ volunteers/
 │       └── en/common.json  # English translations
 └── src/
     ├── app/                # Next.js App Router files
+    │   ├── opportunities/            # Opportunities listing page
+    │   │   ├── [id]/                 # Dynamic opportunity details page
+    │   │   │   └── page.tsx          # Individual opportunity page
+    │   │   └── page.tsx              # Opportunities listing page
     ├── components/         # React components
     │   ├── layout/         # Layout components
     │   ├── sections/       # Page section components
     │   └── ui/             # Reusable UI components
+    │       ├── filters/                # Filter components
+    │       │   ├── SearchInput.tsx     # Search input component
+    │       │   ├── FilterDropdown.tsx  # Dropdown filter component
+    │       │   ├── DateRangeFilter.tsx # Date range filter component
+    │       │   └── FilterSection.tsx   # Combined filters component
+    │       ├── opportunity/            # Opportunity components
+    │       │   ├── detail/                     # Detail view components
+    │       │   │   ├── DetailHeader.tsx        # Opportunity header
+    │       │   │   ├── DetailContent.tsx       # Opportunity content
+    │       │   │   ├── DetailActions.tsx       # Action buttons
+    │       │   │   ├── DetailSkeleton.tsx      # Loading skeleton
+    │       │   │   └── DetailError.tsx         # Error state
+    │       │   ├── OpportunityCard.tsx         # Card component
+    │       │   ├── OpportunityCardSkeleton.tsx # Loading skeleton
+    │       │   ├── EmptyState.tsx              # Empty results state
+    │       │   └── ErrorState.tsx              # Error state
+    │       └── Pagination.tsx         # Pagination component
     ├── context/            # React context providers
     ├── hooks/              # Custom React hooks
+    │   ├── api/              # API hooks
+    │   │   ├── useOpportunities.ts     # Opportunities listing hook
+    │   │   └── useOpportunityDetail.ts # Opportunity details hook
     ├── lib/                # Utility functions
     ├── styles/             # CSS modules and global styles
+    │   ├── opportunities.module.css      # Opportunities listing styles
+    │   └── opportunity/                  # Opportunity styles
+    │       └── detail.module.css         # Detail page styles
     └── types/              # TypeScript type definitions
+        └── opportunity.ts              # Opportunity type definitions
 ```
 
 ## Shadcn Implementation
@@ -294,6 +322,145 @@ To continue development on this project:
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Radix UI Documentation](https://www.radix-ui.com/docs)
 - [Lucide Icons](https://lucide.dev)
+
+
+
+We've added comprehensive features for managing and exploring volunteer opportunities:
+
+### 1. Opportunity Listing Page (`/opportunities`)
+
+The opportunities listing page allows users to browse, search, and filter volunteer opportunities with the following features:
+
+- **Search Functionality**: Real-time search with debouncing for optimal performance
+- **Filtering System**: Filter by category, location, and date range
+- **Pagination**: Paginated results for better performance and user experience
+- **Responsive Layout**: Adapts to all device sizes with appropriate grid layouts
+- **Loading States**: Skeleton loading for improved perceived performance
+- **Empty States**: Clear messaging when no results match filters
+- **Error Handling**: Graceful error handling with retry options
+
+### 2. Opportunity Details Page (`/opportunities/[id]`)
+
+The opportunity details page provides comprehensive information about a specific volunteer opportunity:
+
+- **Detailed View**: Complete information including description, requirements, skills, and time commitment
+- **Media Display**: Featured image with responsive sizing
+- **Conditional Actions**: Application button that adapts based on user login state and opportunity status
+- **Interactive Elements**: Tooltips for disabled actions with explanatory text
+- **Navigation**: Clear path back to the opportunities list
+- **Loading States**: Skeleton loading during data fetching
+- **Error Handling**: Comprehensive error handling with retry options
+
+### 3. Data Management
+
+- **TypeScript Types**: Comprehensive type definitions for improved development experience
+- **Custom Hooks**: API hooks for data fetching with loading, error, and success states
+- **Mock Data**: Simulated API responses for development and testing
+
+### 4. User Experience Enhancements
+
+- **Micro-interactions**: Subtle animations and transitions for improved user engagement
+- **Tooltips**: Contextual information for better user understanding
+- **Loading Indicators**: Skeleton loading for reduced perceived wait times
+- **State Management**: Clear indication of current filters and search parameters
+
+### 5. Integration with Home Page
+
+- **Featured Opportunities**: Display of selected opportunities on the home page
+- **Call-to-Action**: Direct links to the opportunities page from hero section and featured opportunities
+- **Seamless Navigation**: Connected user journey from home to opportunities to details
+
+## New Data Models
+
+### Opportunity Type
+
+```typescript
+// Basic opportunity information displayed in cards
+export interface Opportunity {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  location: string;
+  date: string;
+  spots: number;
+  featured: boolean;
+  category: string;
+}
+```
+
+### OpportunityDetail Type
+
+```typescript
+// Detailed opportunity information for the details page
+export interface OpportunityDetail extends Opportunity {
+  longDescription: string;
+  requirements: string[];
+  skills: string[];
+  timeCommitment: string;
+  contactPerson?: string;
+  contactEmail?: string;
+  address?: string;
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
+  status: 'open' | 'closed' | 'filled';
+  applicationDeadline: string;
+}
+```
+
+## Component Architecture
+
+### Filter Components
+
+1. **SearchInput**: Text search with debouncing
+2. **FilterDropdown**: Category and location filtering
+3. **DateRangeFilter**: Date range selection
+4. **FilterSection**: Container for all filters with reset functionality
+
+### Opportunity Card Components
+
+1. **OpportunityCard**: Display for individual opportunities
+2. **OpportunityCardSkeleton**: Loading state
+3. **EmptyState**: No results display
+4. **ErrorState**: Error handling display
+
+### Detail Page Components
+
+1. **DetailHeader**: Title, image, and meta information
+2. **DetailContent**: Main content sections
+3. **DetailActions**: Application and sharing buttons
+4. **DetailSkeleton**: Loading state
+5. **DetailError**: Error handling
+
+## Navigation Flow
+
+The project now implements a complete user journey:
+
+1. Users can explore featured opportunities on the home page
+2. "Explore Opportunities" button in the hero section leads to the opportunities listing page
+3. "View All Opportunities" button in the featured section leads to the full listing
+4. Clicking any opportunity card navigates to its detailed view
+5. Back button on the detail page returns to the listing page
+
+## CSS Module Organization
+
+1. **opportunities.module.css**: Styles for the opportunities listing page
+2. **opportunity/detail.module.css**: Styles for the opportunity details page
+
+This organization keeps styles modular and maintainable while ensuring consistent design language across features.
+
+## Internationalization Enhancements
+
+Additional translation keys have been added to support the new features:
+
+1. **Filter Labels**: Category, location, date filters
+2. **UI Elements**: Pagination, buttons, empty states
+3. **Error Messages**: Various error states
+4. **Detail Page**: Section titles, action buttons
+
+All new components fully support RTL/LTR layouts with proper directional adjustments.
 
 ---
 
