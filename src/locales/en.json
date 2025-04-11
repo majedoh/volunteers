@@ -1,0 +1,56 @@
+{
+  "common": {
+    "appName": "Haramain Volunteers",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "language": "Language",
+    "arabic": "العربية",
+    "english": "English"
+  },
+  "header": {
+    "nav": {
+      "home": "Home",
+      "opportunities": "Opportunities",
+      "about": "About",
+      "contact": "Contact Us"
+    },
+    "loginButton": "Login",
+    "greeting": "Hello, {name}",
+    "logoutButton": "Logout"
+  },
+  "footer": {
+    "copyright": "© {year} Presidency of Religious Affairs at the Grand Mosque and the Prophet's Mosque. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
+    }
+  },
+  "homepage": {
+    "hero": {
+      "title": "Volunteer in the Holiest Sites",
+      "subtitle": "Join the Haramain Volunteers platform and contribute to serving the guests of Allah.",
+      "cta": "Discover Volunteering Opportunities"
+    },
+    "featured": {
+      "title": "Featured Volunteer Opportunities",
+      "card": {
+        "titlePlaceholder": "Volunteer Opportunity Title",
+        "descriptionPlaceholder": "A brief description of the volunteer opportunity and its basic requirements.",
+        "location": "Location:",
+        "duration": "Duration:",
+        "viewDetails": "View Details"
+      }
+    },
+    "about": {
+      "title": "About the Haramain Volunteers Platform",
+      "content": "This platform aims to organize and facilitate the volunteering process at the Grand Mosque and the Prophet's Mosque, allowing valued volunteers the opportunity to contribute to serving pilgrims and visitors, enhancing their spiritual experience. We strive to provide an interactive and organized environment that efficiently connects volunteers with available opportunities."
+    },
+    "cta": {
+      "text": "Ready to contribute? Join us today!",
+      "button": "Register Now / Login"
+    }
+  },
+  "auth": {
+    "signInWithGoogle": "Sign in with Google"
+  }
+}
