@@ -17,7 +17,9 @@ import {
   Award, 
   Clock,
   AlertTriangle,
-  ChevronDown
+  ChevronDown,
+  Shield,
+  User
 } from 'lucide-react';
 
 const AdminDashboardPage = () => {
@@ -123,65 +125,100 @@ const AdminDashboardPage = () => {
       {/* Quick Actions */}
       <QuickActionButtons />
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-        <SummaryCard 
-          title={t('pendingVolunteers')}
-          value={summaryData.pendingVolunteers}
-          icon={<Users className="h-5 w-5" />}
-          color="warning"
-          actionHref="/admin/volunteers/pending"
-          actionLabel={t('managePendingVolunteers')}
-        />
-        
-        <SummaryCard 
-          title={t('activeVolunteers')}
-          value={formatNumber(summaryData.activeVolunteers)}
-          icon={<UserCheck className="h-5 w-5" />}
-          description={t('approvedVolunteers')}
-          color="primary"
-          actionHref="/admin/volunteers"
-          actionLabel={t('viewAllVolunteers')}
-        />
-        
-        <SummaryCard 
-          title={t('pendingOpportunities')}
-          value={summaryData.pendingOpportunities}
-          icon={<ClipboardList className="h-5 w-5" />}
-          trend={{ value: 20, isPositive: true }}
-          color="warning"
-          actionHref="/admin/opportunities/pending"
-          actionLabel={t('manageOpportunities')}
-        />
-        
-        <SummaryCard 
-          title={t('activeOpportunities')}
-          value={summaryData.activeOpportunities}
-          icon={<CalendarCheck className="h-5 w-5" />}
-          color="success"
-          actionHref="/admin/opportunities/active"
-          actionLabel={t('viewActiveOpportunities')}
-        />
-        
-        <SummaryCard 
-          title={t('completedOpportunities')}
-          value={summaryData.completedOpportunities}
-          icon={<Award className="h-5 w-5" />}
-          description={t('totalCompletedOpportunities')}
-          color="secondary"
-          actionHref="/admin/opportunities/completed"
-          actionLabel={t('viewCompletedOpportunities')}
-        />
-        
-        <SummaryCard 
-          title={t('volunteerHours')}
-          value={formatNumber(summaryData.totalVolunteerHours)}
-          icon={<Clock className="h-5 w-5" />}
-          description={t('totalHoursContributed')}
-          color="accent"
-          actionHref="/admin/reports/hours"
-          actionLabel={t('viewHoursReport')}
-        />
+      {/* User Stats Section */}
+      <div className="mb-6">
+        <h2 className="text-lg font-semibold mb-4 flex items-center">
+          <Users className="h-5 w-5 mr-2" />
+          {t('userStatistics')}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <SummaryCard 
+            title={t('pendingUsers')}
+            value={summaryData.pendingVolunteers}
+            icon={<Users className="h-5 w-5" />}
+            color="warning"
+            actionHref="/admin/users?tab=pending"
+            actionLabel={t('managePendingUsers')}
+          />
+          
+          <SummaryCard 
+            title={t('activeVolunteers')}
+            value={formatNumber(summaryData.activeVolunteers)}
+            icon={<UserCheck className="h-5 w-5" />}
+            description={t('approvedVolunteers')}
+            color="primary"
+            actionHref="/admin/users?tab=active"
+            actionLabel={t('viewAllVolunteers')}
+          />
+          
+          <SummaryCard 
+            title={t('adminUsers')}
+            value="3"
+            icon={<Shield className="h-5 w-5" />}
+            description={t('platformAdministrators')}
+            color="secondary"
+            actionHref="/admin/users?tab=admin"
+            actionLabel={t('viewAdmins')}
+          />
+          
+          <SummaryCard 
+            title={t('totalUsers')}
+            value={formatNumber(summaryData.activeVolunteers + summaryData.pendingVolunteers + 3)}
+            icon={<User className="h-5 w-5" />}
+            description={t('allUserTypes')}
+            color="accent"
+            actionHref="/admin/users"
+            actionLabel={t('manageAllUsers')}
+          />
+        </div>
+      </div>
+      
+      {/* Opportunity Stats Section */}
+      <div className="mb-6">
+        <h2 className="text-lg font-semibold mb-4 flex items-center">
+          <CalendarCheck className="h-5 w-5 mr-2" />
+          {t('opportunityStatistics')}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">        
+          <SummaryCard 
+            title={t('pendingOpportunities')}
+            value={summaryData.pendingOpportunities}
+            icon={<ClipboardList className="h-5 w-5" />}
+            trend={{ value: 20, isPositive: true }}
+            color="warning"
+            actionHref="/admin/opportunities/pending"
+            actionLabel={t('manageOpportunities')}
+          />
+          
+          <SummaryCard 
+            title={t('activeOpportunities')}
+            value={summaryData.activeOpportunities}
+            icon={<CalendarCheck className="h-5 w-5" />}
+            color="success"
+            actionHref="/admin/opportunities/active"
+            actionLabel={t('viewActiveOpportunities')}
+          />
+          
+          <SummaryCard 
+            title={t('completedOpportunities')}
+            value={summaryData.completedOpportunities}
+            icon={<Award className="h-5 w-5" />}
+            description={t('totalCompletedOpportunities')}
+            color="secondary"
+            actionHref="/admin/opportunities/completed"
+            actionLabel={t('viewCompletedOpportunities')}
+          />
+          
+          <SummaryCard 
+            title={t('volunteerHours')}
+            value={formatNumber(summaryData.totalVolunteerHours)}
+            icon={<Clock className="h-5 w-5" />}
+            description={t('totalHoursContributed')}
+            color="accent"
+            actionHref="/admin/reports/hours"
+            actionLabel={t('viewHoursReport')}
+          />
+        </div>
       </div>
 
       {/* Recent Applications */}

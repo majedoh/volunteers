@@ -1,9 +1,10 @@
 /* src/styles/theme.css */
 :root {
-    /* Color Palette */
-    --color-primary: #1a2033;
-    --color-primary-light: #2c3448;
-    --color-primary-dark: #101525;
+    /* Updated Color Palette with Blue Theme */
+    --color-primary: #2563eb;
+    /* Updated to a vibrant blue */
+    --color-primary-light: #3b82f6;
+    --color-primary-dark: #1d4ed8;
 
     --color-secondary: #F5F5F5;
     --color-secondary-dark: #e0e0e0;
@@ -106,9 +107,10 @@
 
 /* Dark mode overrides */
 .dark {
-    --color-primary: #1a2033;
-    --color-primary-light: #2c3448;
-    --color-primary-dark: #101525;
+    --color-primary: #3b82f6;
+    /* Updated to blue */
+    --color-primary-light: #60a5fa;
+    --color-primary-dark: #2563eb;
 
     --color-secondary: #2a2a2a;
     --color-secondary-dark: #222222;
@@ -141,4 +143,29 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* Additional blue-focused selector styles */
+.blue-active-tab {
+    background-color: #2563eb;
+    color: white;
+    border-color: #1d4ed8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.blue-active-nav {
+    background-color: #2563eb;
+    color: white;
+    border-color: #1d4ed8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.blue-hover:hover {
+    background-color: #eff6ff;
+    color: #2563eb;
+}
+
+.sort-active {
+    color: #2563eb;
+    font-weight: 600;
 }

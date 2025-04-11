@@ -198,5 +198,75 @@
   
 
 
-  "adminUser": "Admin User"
+  "adminUser": "Admin User",
+
+
+
+  "manageUsers": "Manage Users",
+  "pendingUsers": "Pending Users",
+  "activeUsers": "Active Users",
+  "adminUsers": "Admin Users",
+  "searchUsers": "Search users by name, email, or phone...",
+  "user": "User",
+  "volunteer": "Volunteer",
+  "admin": "Admin",
+  "superAdmin": "Super Admin",
+  "joinedOn": "Joined on",
+  "joinedAt": "Joined At",
+  "lastActive": "Last Active",
+  "status": "Status",
+  "actions": "Actions",
+  "view": "View",
+  "admit": "Admit",
+  "admitting": "Admitting...",
+  "revoke": "Revoke",
+  "revoking": "Revoking...",
+  "promote": "Promote",
+  "promoting": "Promoting...",
+  "block": "Block",
+  "blocking": "Blocking...",
+  "delete": "Delete",
+  "deleting": "Deleting...",
+  "close": "Close",
+  "nationalIdVerified": "National ID Verified",
+  "nationalIdNotVerified": "National ID Not Verified",
+  "documents": "Documents",
+  "nationalId": "National ID",
+  "selfie": "Selfie",
+  "viewFullSize": "View Full Size",
+  "document": "Document",
+  
+  "pending": "Pending",
+  "active": "Active",
+  "inactive": "Inactive",
+  "blocked": "Blocked",
+
+
+
+  "confirmAdmit": "Confirm User Admission",
+  "confirmAdmitMessage": "Are you sure you want to admit {name}? This will verify their account and grant them access to volunteer opportunities.",
+  "confirmRevoke": "Confirm User Revocation",
+  "confirmRevokeMessage": "Are you sure you want to revoke {name}'s account? They will no longer be able to participate in volunteer opportunities.",
+  "confirmPromote": "Confirm User Promotion",
+  "confirmPromoteMessage": "Are you sure you want to promote {name} to admin? This will grant them administrative privileges.",
+  "confirmBlock": "Confirm User Block",
+  "confirmBlockMessage": "Are you sure you want to block {name}? They will be unable to access the platform until unblocked.",
+  "confirmDelete": "Confirm User Deletion",
+  "confirmDeleteMessage": "Are you sure you want to delete {name}'s account? This action cannot be undone.",
+  "confirmAction": "Confirm Action",
+  "confirmActionMessage": "Are you sure you want to perform this action?",
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+  "processing": "Processing...",
+  
+
+  "noUsersFound": "No Users Found",
+  "noPendingUsers": "There are no pending users to review at this time.",
+  "noActiveUsers": "There are no active users to display.",
+  "noAdminUsers": "There are no admin users to display.",
+  "clearSearch": "Clear Search",
+  
+
+  "errorPerformingAction": "An error occurred while performing the action. Please try again.",
+  "userNotFound": "User not found."
 }

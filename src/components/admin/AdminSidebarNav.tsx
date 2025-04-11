@@ -8,6 +8,7 @@ import { useLanguage } from '@/context/language-context';
 import { 
   LayoutDashboard, 
   Users, 
+  UserCog,
   ClipboardList, 
   Settings, 
   BarChart, 
@@ -29,8 +30,8 @@ const NavItem: React.FC<NavItemProps> = ({ href, icon, label, isActive }) => {
       href={href}
       className={`flex items-center gap-3 px-3 py-2 rounded-md transition-colors ${
         isActive
-          ? 'bg-primary text-white'
-          : 'text-gray-700 hover:bg-primary/10 hover:text-primary'
+          ? 'bg-blue-600 text-blue shadow-sm'
+          : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
       }`}
     >
       {icon}
@@ -66,6 +67,11 @@ const AdminSidebarNav: React.FC = () => {
       href: '/admin/dashboard',
       icon: <LayoutDashboard className="h-5 w-5" />,
       label: t('dashboard'),
+    },
+    {
+      href: '/admin/users',
+      icon: <UserCog className="h-5 w-5" />,
+      label: t('manageUsers'),
     },
     {
       href: '/admin/volunteers',
@@ -110,6 +116,14 @@ const AdminSidebarNav: React.FC = () => {
     },
   ];
 
+  // Check if a path is active, including partial matching for nested routes
+  const isPathActive = (path: string): boolean => {
+    if (path === '/admin/dashboard') {
+      return pathname === path;
+    }
+    return pathname.startsWith(path);
+  };
+
   return (
     <aside className="w-64 bg-white border-r border-gray-200 h-[calc(100vh-4rem)] fixed top-16 left-0 overflow-y-auto py-6 px-2 hidden md:block">
       <NavSection title={t('management')}>
@@ -119,7 +133,7 @@ const AdminSidebarNav: React.FC = () => {
             href={item.href}
             icon={item.icon}
             label={item.label}
-            isActive={pathname === item.href}
+            isActive={isPathActive(item.href)}
           />
         ))}
       </NavSection>
@@ -131,7 +145,7 @@ const AdminSidebarNav: React.FC = () => {
             href={item.href}
             icon={item.icon}
             label={item.label}
-            isActive={pathname === item.href}
+            isActive={isPathActive(item.href)}
           />
         ))}
       </NavSection>
@@ -143,7 +157,7 @@ const AdminSidebarNav: React.FC = () => {
             href={item.href}
             icon={item.icon}
             label={item.label}
-            isActive={pathname === item.href}
+            isActive={isPathActive(item.href)}
           />
         ))}
       </NavSection>
